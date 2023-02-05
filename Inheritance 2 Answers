@@ -1,0 +1,18 @@
+1. Parent class: Spell; child classes: Accio, Confundo
+2. Base class: Spell; sub classes: Accio, Confudo
+3. Output:
+  (nothing)
+  
+  Accio
+  
+  Summoning Charm Accio 
+  No description
+  
+  Confundus Charm Confundo
+  Causes the victim to become confused and befuddled.
+  
+4. Since there is a seperate "get_description" method within the Confundo class, that is the one that is getting called - NOT the one from the Spell class.
+5. We would need to add in a new "get_description" within the Accio class:
+
+  def get_description(self):
+    return "This charm summons an object to the caster, potentially over a significant distance"
